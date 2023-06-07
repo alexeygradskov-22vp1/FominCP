@@ -15,8 +15,8 @@ public:
 	Baseclass();
 	Baseclass(int x1, int y1, int R1);
 	void moveTo(int x1, int y1);
-	virtual void show() = 0;
-	virtual void hide() = 0;
+	virtual void show();
+	virtual void hide();
 	virtual ~Baseclass();
 	class coordinate {};
 	class Border{};
