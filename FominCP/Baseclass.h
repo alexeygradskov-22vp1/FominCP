@@ -18,6 +18,31 @@ public:
 	virtual void show();
 	virtual void hide();
 	virtual ~Baseclass();
-	class coordinate {};
-	class Border{};
+
+
+	class coordinateException: exception{
+	private:
+		string _message;
+	public:
+		coordinateException(string message) {
+			_message = message;
+		}
+
+		string what() {
+			return _message;
+		}
+	};
+
+	class BorderException: exception{
+	private:
+		string _message;
+	public:
+		BorderException(string message) {
+			_message = message;
+		}
+
+		string what() {
+			return _message;
+		}
+	};
 };

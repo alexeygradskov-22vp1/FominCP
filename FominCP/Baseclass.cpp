@@ -28,4 +28,11 @@ void Baseclass::moveTo(int _x, int _y) {
 	y = _y;
 	show();
 }
+void Baseclass::show()
+{
+}
+void Baseclass::hide()
+{
+}
+
 

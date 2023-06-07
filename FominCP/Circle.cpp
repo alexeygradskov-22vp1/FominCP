@@ -9,7 +9,7 @@ void Circle::show() {
 	pen = CreatePen(PS_SOLID, 2, RGB(0, 0, 0));//граница
 	brush = CreateSolidBrush(colors);
 	if (((x - R) < 0) || ((x + R) >1920) || ((y - R) <0) || ((y + R) >1080)
-		)throw Border();
+		)throw BorderException("Фигура выходит за границу окна");
 	SelectObject(hdc, pen);
 	SelectObject(hdc, brush);
 	Ellipse(hdc, x-R, y-R,x+R,y+R);

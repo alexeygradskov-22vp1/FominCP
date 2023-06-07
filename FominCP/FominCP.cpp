@@ -26,15 +26,11 @@ int main()
 		container.hideAll();
 		figure->moveTo(530, 300);
 	}
-	catch (Baseclass::coordinate) {
-		cout << "У фигур разные координаты!!!" << endl;
-		cout << "Circle(x:" << circle->x << "; y:" << circle->y << "; R:" << circle->R << ")" << endl;
-		cout << "Pentagon(x:" << pentagon->x << "; y:" << pentagon->y << "; R:" << pentagon->R << ")" << endl;
+	catch (Baseclass::coordinateException* e) {
+		cerr << e->what() << endl;
 	}
-	catch (Baseclass::Border) {
-		cout << "Выходит за границы окна консоли!!!" << endl;
-		cout << "Circle(x:" << circle->x << "; y:" << circle->y << "; R:" << circle->R << ")" << endl;
-		cout << "Pentagon(x:" << pentagon->x << "; y:" << pentagon->y << "; R:" << pentagon->R << ")" << endl;
+	catch (Baseclass::BorderException* e) {
+		cerr << e->what() << endl;
 	}
 	return 0;
 }

@@ -9,7 +9,7 @@ void Pentagon::show() {
 	HBRUSH brush;
 	POINT points[] = { {x , y - R},{x + R * cos(0.31), y - R * sin(0.31)},{x + R * cos(0.94), y + R * sin(0.94)},
 			{x - R * cos(0.94), y + R * sin(0.94)},{x - R * cos(0.31), y - R * sin(0.31)} };
-	pen = CreatePen(PS_SOLID, 2, RGB(0, 0, 0));//граница
+	pen = CreatePen(PS_SOLID, 2, RGB(0, 0, 0));
 	brush = CreateSolidBrush(colors);
 	SelectObject(hdc, pen);
 	SelectObject(hdc, brush);

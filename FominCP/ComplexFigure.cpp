@@ -14,7 +14,7 @@ ComplexFigure::ComplexFigure(Circle* _c, Pentagon* _p){
 		krug.colors = _c->colors;
 	}
 	else {
-		throw coordinate();
+		throw coordinateException("Координаты фигур отличаются");
 	}
 };
 void ComplexFigure::show() {
