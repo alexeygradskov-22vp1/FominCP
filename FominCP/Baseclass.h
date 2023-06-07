@@ -1,6 +1,8 @@
 #pragma once
 #include <iostream>
+#include <stdio.h>
 #include <Windows.h>
+#include <exception>
 #include <windowsx.h>
 using namespace std;
 class Baseclass {
@@ -10,8 +12,8 @@ public:
 	int R;
 	COLORREF colors;
 	HWND hwnd = GetConsoleWindow();
-	HDC hdc = GetDC(hwnd);
 	RECT rt;
+	HDC hdc = GetDC(hwnd);
 	Baseclass();
 	Baseclass(int x1, int y1, int R1);
 	void moveTo(int x1, int y1);
@@ -20,7 +22,7 @@ public:
 	virtual ~Baseclass();
 
 
-	class coordinateException: exception{
+	class coordinateException : public std::exception {
 	private:
 		string _message;
 	public:
@@ -33,7 +35,7 @@ public:
 		}
 	};
 
-	class BorderException: exception{
+	class BorderException: public std::exception{
 	private:
 		string _message;
 	public:

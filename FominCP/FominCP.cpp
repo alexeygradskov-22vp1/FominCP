@@ -14,7 +14,7 @@ int main()
 	Circle* circle = new Circle(300, 100, 60, RGB(0, 255, 127));
 	Circle* circle1 = new Circle(400, 250, 60, RGB(0, 255, 127));
 	Pentagon* pentagon = new Pentagon(300, 100, 60, RGB(244, 164, 96));
-	Pentagon* pentagon1 = new Pentagon(300, 350, 60, RGB(244, 164, 96));
+	Pentagon* pentagon1 = new Pentagon(1000, 350, 60, RGB(244, 164, 96));
 	Stack container;
 	try {
 		ComplexFigure* figure = new ComplexFigure(circle, pentagon);
@@ -26,11 +26,11 @@ int main()
 		container.hideAll();
 		figure->moveTo(530, 300);
 	}
-	catch (Baseclass::coordinateException* e) {
-		cerr << e->what() << endl;
+	catch (Baseclass::coordinateException& e) {
+		cerr << e.what() << endl;
 	}
-	catch (Baseclass::BorderException* e) {
-		cerr << e->what() << endl;
+	catch (Baseclass::BorderException& e) {
+		cerr << e.what() << endl;
 	}
 	return 0;
 }

@@ -17,6 +17,7 @@ Baseclass::Baseclass(int x1, int y1, int R1) {
 	this->x = x1;
 	this->y = y1;
 	this->R = R1;
+	GetClientRect(hwnd, &rt);
 }
 Baseclass::~Baseclass() {
 	ReleaseDC(hwnd, hdc); 

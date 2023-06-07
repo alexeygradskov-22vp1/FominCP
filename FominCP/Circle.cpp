@@ -8,7 +8,7 @@ void Circle::show() {
 	HBRUSH brush;
 	pen = CreatePen(PS_SOLID, 2, RGB(0, 0, 0));//граница
 	brush = CreateSolidBrush(colors);
-	if (((x - R) < 0) || ((x + R) >1920) || ((y - R) <0) || ((y + R) >1080)
+	if (((x - R) < 0) || ((x + R) >rt.right) || ((y - R) <0) || ((y + R) >rt.bottom)
 		)throw BorderException("Фигура выходит за границу окна");
 	SelectObject(hdc, pen);
 	SelectObject(hdc, brush);
